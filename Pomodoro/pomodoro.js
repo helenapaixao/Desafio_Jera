@@ -24,7 +24,32 @@ var pomodoro ={
             self.intervaloCallback.aply(self);
         }, 1000);
 
-        document.querySelector('#')
-    }
+        document.querySelector('#comecar').onclick = function(){
+            self.startComecar.aply(self);
+        };
+        document.querySelector('#intervalo').onclick = function(){
+            self.intervalo.aply(self);
+        };
+
+        document.querySelector('#parar').onclick = function(){
+            self.parar.aply(self);
+        };
+
+
+    },
+
+    deletarVariaveis : function(mins,sec,comecar){
+        this.minutos = mins;
+        this.segundos = sec;
+        this.comecar = comecar;
+        this.animacaoLargura = 200(this.minutos*60);
+        this.animacaoAltura=0;
+    },
+
+    startComecar: function(){
+        this.deletarVariaveis(25,0,true);
+    },
+    
+
 
 }
