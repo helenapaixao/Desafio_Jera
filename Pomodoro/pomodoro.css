@@ -14,7 +14,8 @@
     font-size:60px; 
     margin:10px auto;
     border : 5px solid rgb(64, 248, 88);
-   
+    overflow:hidden;
+    position:relative;
     width:200px;
     height:200px;
     position:relative;
@@ -22,7 +23,9 @@
   }
   
   #time{
+
     margin-top:80px;
+    z-index : 1;
     position:relative;
   }
   
