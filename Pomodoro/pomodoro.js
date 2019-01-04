@@ -84,8 +84,18 @@ var pomodoro = {
         this.comecar = false;
         this.animaAltura = 0;
         //acrescentar som 
-    }
+        this.audio();
+    },
+
+    audio(){
+           const audio = document.querySelector('audio');
+           audio.currentTime=10.0;
+           audio.play();
+          
+  
+      }
 };
+
 window.onload = function () {
     pomodoro.iniciar();
 };
