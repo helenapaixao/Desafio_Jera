@@ -1,21 +1,23 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-   
-    <title>Lembrete de Leitura de Livros</title>
+    <meta charset="utf-8" />
+
+    <title> Lembrete de leitura de livros</title>
+
     <link rel="stylesheet" href="estilo.css">
     <script src="script.js"></script>
 </head>
+
 <body>
+
     <div class="card">
-        <h2 class="card-title">Adicionar livros</h2>
+
+        <h2 class="card-title"> Adicionar livros </h2>
+
         <div class="card-form">
 
-
             <input type="text" placeholder="Digite o nome do livro" id="nome">
-
 
             <input type="number" placeholder="Digite o numero total de pagina" id="pagina">
 
@@ -25,10 +27,37 @@
 
                 <button class="card-acoes" onclick="biblioteca.cadastrarLembrete()">Cadastrar Lembrete</button>
             </div>
-
-
-        </div>
         </div>
     </div>
+    <div class="card">
+        <h2 class="card-title">Lista de Livros</h2>
+        <table class="tabela-livros">
+            <thead>
+
+                <th>Nome do Livro</th>
+                <th>Numero total de paginas</th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody id="tabela">
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <div class="card">
+            <h2 class="card-title"> Lembrete Cadastrado</h2>
+            <table class="tabela-livros">
+                <thead>
+                    <th>Nome do Livro</th>
+                    <th>dia</th>
+                    <th>hora</th>
+                    <th></th>
+                </thead>
+                <tbody id="tabela2">
+
+                </tbody>
+            </table>
+        </div>
 </body>
 </html>
