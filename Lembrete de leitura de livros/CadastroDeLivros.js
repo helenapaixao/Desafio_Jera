@@ -85,8 +85,52 @@ class CadastroDeLivros {
 
     cadastrarLembrete(id) {
 
+        //o livro lembrado deverá entrar aqui
 
-      
+       let data = prompt("Digite o dia em que quer ser lembrado");
+        let hora = prompt("Digite a hora em que quer ser lembrado");
+
+        if (this.IdMarcado != null) {
+
+            for (let i = 0; i < this.livros.length; i++) {
+                if (this.livros[i].id == this.IdMarcado) {
+                    this.livros[i].nome == this.livro.nome;
+                    this.livros[i].pagina == this.livro.pagina;
+                    this.IdMarcado = null;
+                }
+            }
+
+        } else {
+
+            this.livro.id = this.contador;
+            this.livros.push(this.livro);
+            this.contador++;
+        }
+
+        let tabela = document.getElementById("tabela2");
+        tabela.innerHTML = "";
+
+        for (let i = 0; i < this.livros.length; i++) {
+            let linha = tabela.insertRow();
+            let celulaNome = linha.insertCell(0);
+            let celulaData = linha.insertCell(1);
+            let celulahora = linha.insertCell(2);
+            let celulaImgExcluir = linha.insertCell(3);
+
+            celulaNome.innerHTML = this.livros[i].nome;
+
+            celulaData.innerHTML = data;
+            celulahora.innerHTML = hora;
+
+
+            let imagemExcluir = document.createElement("img");
+
+            imagemExcluir.setAttribute("src", "img/delete.svg");
+            imagemExcluir.setAttribute("onclick", `biblioteca.excluirLembrete(${this.livros[i].id})`);
+            celulaImgExcluir.appendChild(imagemExcluir);
+        }
+
+        this.limpar();
     }
 
     excluirLembrete(id) {
@@ -96,6 +140,7 @@ class CadastroDeLivros {
     excluir(id) {
 
     criarTabela() {
+
 
 
         }
