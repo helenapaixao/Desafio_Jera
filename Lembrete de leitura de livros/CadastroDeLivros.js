@@ -1,3 +1,4 @@
+
 class CadastroDeLivros {
 
     constructor() {
@@ -83,7 +84,7 @@ class CadastroDeLivros {
     }
 
 
-   cadastrarLembrete(id) {
+    cadastrarLembrete(id) {
 
         //o livro lembrado deverá entrar aqui
 
@@ -132,6 +133,7 @@ class CadastroDeLivros {
 
         this.limpar();
     }
+
     excluirLembrete(id) {
 
 
@@ -157,7 +159,6 @@ class CadastroDeLivros {
             }
         }
     }
-
     criarTabela() {
 
         let tabela = document.getElementById("tabela");
@@ -192,8 +193,6 @@ class CadastroDeLivros {
 
     }
 
-    }
-
-
+}
 
 let biblioteca = new CadastroDeLivros();
