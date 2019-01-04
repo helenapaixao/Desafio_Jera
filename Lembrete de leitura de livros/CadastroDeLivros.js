@@ -44,7 +44,6 @@ class CadastroDeLivros {
         this.limpar();
     }
     validar() {
-        
         let mensagem = "";
         if (this.livro.nome == "") {
             mensagem += "O nome do livro deve ser preenchido."
@@ -62,10 +61,25 @@ class CadastroDeLivros {
     }
     limpar() {
 
+        document.getElementById("nome").value = "";
+        document.getElementById("pagina").value = "";
     }
 
     marcar(id) {
 
+        for (let i = 0; i < this.livros.length; i++) {
+            if (this.livros[i].id == id) {
+
+                this.IdMarcado = id;
+
+                document.getElementById("nome").value = this.livros[i].nome;
+                document.getElementById("pagina").value = this.livros[i].pagina;
+
+                this.livros[i].lembrete = !this.livros[i].lembrete;
+
+            }
+        }
+        this.criarTabela();
     }
 
 
