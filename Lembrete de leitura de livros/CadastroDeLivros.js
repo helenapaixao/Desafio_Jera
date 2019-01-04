@@ -160,9 +160,37 @@ class CadastroDeLivros {
 
     criarTabela() {
 
+        let tabela = document.getElementById("tabela");
+        tabela.innerHTML = "";
+        for (let i = 0; i < this.livros.length; i++) {
 
+            let linha = tabela.insertRow();
+            let celulaNome = linha.insertCell(0);
+            let celulaPagina = linha.insertCell(1);
+            let celulaImgMarcar = linha.insertCell(2);
+            let celulaImgExcluir = linha.insertCell(3);
+
+            let imagemMarcar = document.createElement("img");
+            let imagemExcluir = document.createElement("img");
+
+            if (this.livros[i].lembrete) {
+                imagemMarcar.setAttribute("src", "img/checked.svg");
+            } else {
+                imagemMarcar.setAttribute("src", "img/check.svg");
+            }
+            imagemMarcar.setAttribute("onclick", `biblioteca.marcar(${this.livros[i].id})`);
+            celulaImgMarcar.appendChild(imagemMarcar);
+
+            imagemExcluir.setAttribute("src", "img/delete.svg");
+            imagemExcluir.setAttribute("onclick", `biblioteca.excluir(${this.livros[i].id})`);
+            celulaImgExcluir.appendChild(imagemExcluir);
+
+            celulaNome.innerHTML = this.livros[i].nome;
+            celulaPagina.innerHTML = this.livros[i].pagina;
 
         }
+
+    }
 
     }
 
