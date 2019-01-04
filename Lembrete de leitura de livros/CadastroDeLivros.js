@@ -83,7 +83,7 @@ class CadastroDeLivros {
     }
 
 
-    cadastrarLembrete(id) {
+   cadastrarLembrete(id) {
 
         //o livro lembrado deverá entrar aqui
 
@@ -132,12 +132,31 @@ class CadastroDeLivros {
 
         this.limpar();
     }
-
     excluirLembrete(id) {
+
+
+        if (window.confirm("Tem certeza que deseja excluir esse lembrete ?!")) {
+            for (let i = 0; i < this.livros.length; i++) {
+                if (this.livros[i].id == id) {
+                    this.livros.splice(i, 1);
+                    this.criarTabela();
+                }
+            }
+        }
 
 
     }
     excluir(id) {
+
+        if (window.confirm("Tem certeza que deseja excluir?!")) {
+            for (let i = 0; i < this.livros.length; i++) {
+                if (this.livros[i].id == id) {
+                    this.livros.splice(i, 1);
+                    this.criarTabela();
+                }
+            }
+        }
+    }
 
     criarTabela() {
 
@@ -147,6 +166,6 @@ class CadastroDeLivros {
 
     }
 
-}
+
 
 let biblioteca = new CadastroDeLivros();
